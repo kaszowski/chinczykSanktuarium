@@ -10,6 +10,8 @@
   "author": "Kasza",
   "license": "ISC",
   "dependencies": {
+    "express":"*",
+    "body-parser":"*",
     "express-handlebars": "^5.2.0"
   }
 }
