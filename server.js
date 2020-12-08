@@ -1,6 +1,5 @@
 var express = require("express")
 var app = express()
-var fs = require('fs');
 var hbs = require('express-handlebars');
 var path = require("path")
 const PORT = 3000;
