@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+    <div class="header"><h1>Chińczyk</h1></div>
+    <div id="menu">
+        <a href="season1">Sezon 1</a>
+        <a href="season2">Sezon 2</a>
+    </div>
+    <div style="height: 50px;"></div>
+    <div id="container">
+        <table>
+            <tr class="row1">
+                <td>Miejsce</td>
+                <td>Gracz</td>
+                <td>Punkty</td>
+            </tr>
+            {{#each ranking}}
+            <tr class="place{{this.place}}">
+                <td>{{this.place}}</td><td>{{this.name}}</td><td>{{this.points}}</td>
+            </tr>
+            {{/each}}
+        </table>
+        <div style="height: 50px;"></div>
+        <table>
+            <tr class="row1">
+                <td>Data</td><td>Pierwsze miejsce</td><td>Drugie miejsce</td><td>Trzecie miejsce</td>
+            </tr>
+            {{#each scores}}
+            <tr class="row{{this.id}}">
+                {{#each this}}
+                    <td>{{this}}</td>
+                {{/each}}
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+        <script>
+        window.onscroll = function() {myFunction()};
+        // Get the navbar
+        var navbar = document.getElementById("menu");
+
+        // Get the offset position of the navbar
+        var sticky = navbar.offsetTop;
+
+        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+        }
+    </script>
+</body>
+</html>

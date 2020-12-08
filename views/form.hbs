@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script>
+        var scoresTable = [];
+        {{#each scores}}
+            scoresTable.push([])
+            var currentIndex = {{@index}}
+            {{#each this}}
+                scoresTable[currentIndex].push("{{this}}")
+            {{/each}}
+        {{/each}}
+        function defaultTable()
+        {
+            var table = document.createElement("table")
+            var tbody = document.createElement("tbody")
+            table.append(tbody)
+            var row1 = '<tr class="row0"><td>Data</td><td>Pierwsze miejsce</td><td>Drugie miejsce</td><td>Trzecie miejsce</td></td>'
+            tbody.innerHTML = row1;
+            for(var i=0; i<scoresTable.length; i++)
+            {
+                var row = document.createElement("tr")
+                if(i%2==1) row.classList.add("row0")
+                else row.classList.add("row1")
+                for(var j=0; j<scoresTable[i].length; j++)
+                {
+                    var cell = document.createElement("td")
+                    cell.innerHTML = scoresTable[i][j]
+                    row.append(cell)
+                }
+                tbody.append(row)
+            }
+            return table;
+        }
+        function addRecord(table)
+        {
+            var row = document.createElement("tr")
+            table.append(row)
+            for(var i=0; i<scoresTable[0].length; i++)
+            {
+                var cell = document.createElement("td")
+                var input = document.createElement("input")
+                input.type = "text"
+                if(i==0) input.name = "date"
+                else input.name = "place"+i
+                cell.append(input)
+                row.append(cell)
+            }
+            return table
+        }
+        function deleteRecord(table)
+        {
+            console.log(table.children[0].children.length)
+            for(let i=1; i<table.children[0].children.length; i++)
+            {
+                var cell = document.createElement("td")
+                cell.innerHTML = '<input type="checkbox" id="R'+i+'" name="R'+ i +'">'
+                table.children[0].children[i].append(cell)
+                table.children[0].children[i].setAttribute("toDelete", false)
+                table.children[0].children[i].addEventListener("click", function(event){
+                    this.toggleAttribute("todelete")
+                    this.classList.toggle("toDelete")
+                    document.getElementById("R"+i).toggleAttribute("checked")
+                    console.log(this.attributes)
+                })
+            }
+            return table
+        }
+        function handleTable(value)
+        {
+            var selectField
+            selectField='<select onchange="handleTable(this.value)" name="adminOption">'
+            if(value=="normal") selectField+='<option value="normal" selected>Przeglądaj tabelę</option>'
+            else selectField+='<option value="normal">Przeglądaj tabelę</option>'
+            if(value=="add") selectField+='<option value="add" selected>Dodaj rekord</option>'
+            else selectField+='<option value="add">Dodaj rekord</option>'
+            if(value=="delete") selectField+='<option value="delete" selected>Usuń rekordy</option>'
+            else selectField+='<option value="delete">Usuń rekordy</option>'
+            selectField+='</select>'
+            document.getElementById("form").innerHTML=selectField
+            var table = defaultTable()
+            var button =document.createElement("button")
+            button.innerHTML = "Submit"
+            button.type="submit"
+            console.log(value)
+            if(value=="normal") document.getElementById("form").append(table)
+            if(value=="add") document.getElementById("form").append(addRecord(table))
+            if(value=="delete") document.getElementById("form").append(deleteRecord(table))
+            if(value!="normal")document.getElementById("form").append(button)
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Chińczyk</h1>
+    </div>
+        <div id="container">
+            <form method="POST" action="admin" id="form">
+                <select onchange="handleTable(this.value)" name="adminOption">
+                    <option value="normal">Przeglądaj tabelę</option>
+                    <option value="add">Dodaj rekord</option>
+                    <option value="delete">Usuń rekordy</option>
+                </select>
+            </form>
+        </div>
+        <script>
+            handleTable("normal")
+        </script>
+</body>
+</html>
