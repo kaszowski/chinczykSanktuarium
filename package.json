@@ -8,5 +8,8 @@
     "start": "node server.js"
   },
   "author": "Kasza",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express-handlebars": "^5.2.0"
+  }
 }
