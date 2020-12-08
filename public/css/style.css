@@ -7,9 +7,38 @@ table, tr, td
   border-collapse: collapse;
   text-align: center;
 }
+@media (max-width: 600px)
+{
+  table{
+    width: 100%;
+    margin: 0px;
+  }
+  #container
+  {
+    width: 100%;
+  }
+  .header
+  {
+    width: 100%;
+  }
+}
+@media (min-width: 601px)
+{
+  table
+  {
+    width: 500px;
+  }
+  #container
+  {
+    width: 500px;
+  }
+  .header
+  {
+    width: 500px;
+  }
+}
 table
 {
-  width: 500px;
   border: 1px solid black;
 }
 tr
@@ -65,7 +94,6 @@ h1
 }
 #container
 {
-  width: 500px;
   margin: auto;
   text-align: center;
 }
@@ -124,7 +152,6 @@ h1
 }
 .header
 {
-  width: 500px;
   margin: auto;
   text-align: center;
   font-size: large;
