@@ -103,6 +103,10 @@ h1
   margin: auto;
   text-align: center;
 }
+#menu-placeholder
+{
+  height: 50px;
+}
 #menu
 {
   width: 100%;
