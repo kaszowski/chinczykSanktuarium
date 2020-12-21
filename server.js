@@ -84,7 +84,8 @@ function scoresTableGenerate(season)
             [ '15 grudnia 2020', 'Szpila', 'Kozik', 'Kasza'],
             [ '17 grudnia 2020', 'Kasza', 'Kozik', 'Szpila'],
             [ '18 grudnia 2020', 'Szpila', 'Kasza', 'Kozik'],
-            [ '19 grudnia 2020', 'Kasza', 'Kozik', 'Szpila']
+            [ '19 grudnia 2020', 'Kasza', 'Kozik', 'Szpila'],
+            [ '21 grudnia 2020', 'Kasza', 'Szpila', 'Kozik']
           ]
       }
     /*var scoresTable = [];
