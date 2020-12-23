@@ -85,7 +85,7 @@ function scoresTableGenerate(season)
             [ '17 grudnia 2020', 'Kasza', 'Kozik', 'Szpila'],
             [ '18 grudnia 2020', 'Szpila', 'Kasza', 'Kozik'],
             [ '19 grudnia 2020', 'Kasza', 'Kozik', 'Szpila'],
-            [ '21 grudnia 2020', 'Kasza', 'Szpila', 'Kozik']
+            [ '21 grudnia 2020', 'Kozik', 'Kasza', 'Szpila']
           ]
       }
     /*var scoresTable = [];
@@ -140,7 +140,7 @@ function handleSeasons(req, res, season)
 }
 
 app.get("/", function(req, res){
-    handleSeasons(req, res, "season1")
+    handleSeasons(req, res, "season2")
 })
 
 app.get("/season1", function(req, res){
