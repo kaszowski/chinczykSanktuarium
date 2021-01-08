@@ -91,6 +91,12 @@ function scoresTableGenerate(season)
             [ '28 grudnia 2020', 'Szpila', 'Kozik', 'Kasza']
           ]
       }
+      if(season=="season3")
+      {
+          scoresTable = [
+              [ '8 stycznia 2020', 'Kasza', 'Kozik', 'Szpila']
+          ]
+      }
     /*var scoresTable = [];
     var data = fs.readFileSync(fileName, "utf-8")
     data = data.replace(/(?:\r)+/g, "")
@@ -152,6 +158,10 @@ app.get("/season1", function(req, res){
 
 app.get("/season2", function(req, res){
     handleSeasons(req, res, "season2")
+})
+
+app.get("/season3", function(req, res){
+    handleSeasons(req, res, "season3")
 })
 
 app.get("/admin", function(req, res){
