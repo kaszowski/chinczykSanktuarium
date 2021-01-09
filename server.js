@@ -94,7 +94,8 @@ function scoresTableGenerate(season)
       if(season=="season3")
       {
           scoresTable = [
-              [ '8 stycznia 2020', 'Kasza', 'Kozik', 'Szpila']
+              [ '8 stycznia 2020', 'Kasza', 'Kozik', 'Szpila'],
+              [ '9 stycznia 2020', 'Kozik', 'Szpila', 'Kasza']
           ]
       }
     /*var scoresTable = [];
