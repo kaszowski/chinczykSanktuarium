@@ -94,11 +94,12 @@ function scoresTableGenerate(season)
       if(season=="season3")
       {
           scoresTable = [
-              [ '8 stycznia 2020', 'Kasza', 'Kozik', 'Szpila'],
-              [ '9 stycznia 2020', 'Kozik', 'Szpila', 'Kasza'],
-              [ '23 stycznia 2020', 'Kasza', 'Kozik', '-'],
-              [ '24 stycznia 2020', 'Kozik', 'Kasza', '-'],
-              [ '25 stycznia 2020', 'Kasza', 'Kozik', '-']
+              [ '8 stycznia 2021', 'Kasza', 'Kozik', 'Szpila'],
+              [ '9 stycznia 2021', 'Kozik', 'Szpila', 'Kasza'],
+              [ '23 stycznia 2021', 'Kasza', 'Kozik', '-'],
+              [ '24 stycznia 2021', 'Kozik', 'Kasza', '-'],
+              [ '25 stycznia 2021', 'Kasza', 'Kozik', '-'],
+              [ '04 lutego 2021', 'Kozik', 'Kasza', '-'],
           ]
       }
     /*var scoresTable = [];
